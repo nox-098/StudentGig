@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gig Details — StudentGig</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body data-page="gig-details" data-role="student">
+    <div id="siteNav"></div>
+    <main class="section-sm"><div class="container" id="gigContent"></div></main>
+    <div class="modal" id="applyModal">
+      <div class="modal-card">
+        <div class="modal-head">
+          <div>
+            <span class="eyebrow">Student application</span>
+            <h3 style="margin-top: 8px">Why are you a good fit?</h3>
+          </div>
+          <button type="button" data-close-modal aria-label="Close">×</button>
+        </div>
+        <form id="applicationForm">
+          <div class="form-group">
+            <label for="note">Application note</label
+            ><textarea
+              id="note"
+              name="note"
+              required
+              placeholder="Share relevant skills, availability, and why this gig interests you."
+            ></textarea>
+          </div>
+          <button class="btn btn-block" type="submit">Submit application</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

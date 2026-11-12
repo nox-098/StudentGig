@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Post a Gig — StudentGig</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body data-page="post-job" data-role="employer">
+    <div id="siteNav"></div>
+    <main>
+      <section class="page-head">
+        <div class="container" style="text-align: center">
+          <span class="eyebrow">Employer tools</span>
+          <h1 id="formTitle">Post a new gig</h1>
+          <p style="margin-inline: auto">
+            Describe the work clearly so the right students can apply with confidence.
+          </p>
+        </div>
+      </section>
+      <section class="section-sm">
+        <div class="container">
+          <form class="card form-card" id="gigForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="title">Gig title</label
+                ><input id="title" name="title" required placeholder="Social Media Assistant" />
+              </div>
+              <div class="form-group">
+                <label for="category">Category</label
+                ><select id="category" name="category" required>
+                  <option value="">Choose category</option>
+                  <option>Marketing</option>
+                  <option>Design</option>
+                  <option>Retail</option>
+                  <option>Events</option>
+                  <option>Education</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label
+              ><textarea
+                id="description"
+                name="description"
+                required
+                placeholder="Explain the opportunity and its value to a student"
+              ></textarea>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="responsibilities">Responsibilities</label
+                ><textarea
+                  id="responsibilities"
+                  name="responsibilities"
+                  required
+                  placeholder="One responsibility per line"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="qualifications">Qualifications</label
+                ><textarea
+                  id="qualifications"
+                  name="qualifications"
+                  required
+                  placeholder="One qualification per line"
+                ></textarea>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="type">Job type</label
+                ><select id="type" name="type" required>
+                  <option value="">Choose type</option>
+                  <option>Part-Time</option>
+                  <option>Short-Term</option>
+                  <option>Remote</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="location">Location</label
+                ><select id="location" name="location" required>
+                  <option value="">Choose location</option>
+                  <option>Remote</option>
+                  <option>On Campus</option>
+                  <option>Local</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="salary">Numeric pay amount</label
+                ><input
+                  id="salary"
+                  name="salary"
+                  type="number"
+                  min="1"
+                  required
+                  placeholder="250"
+                />
+                <div class="helper">Used for student salary filtering.</div>
+              </div>
+              <div class="form-group">
+                <label for="salaryLabel">Displayed payment</label
+                ><input id="salaryLabel" name="salaryLabel" required placeholder="₱250 / hour" />
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="schedule">Work schedule</label
+                ><input
+                  id="schedule"
+                  name="schedule"
+                  required
+                  placeholder="10 hours/week, flexible"
+                />
+              </div>
+              <div class="form-group">
+                <label for="deadline">Application deadline</label
+                ><input id="deadline" name="deadline" type="date" required />
+              </div>
+            </div>
+            <div class="action-row" style="justify-content: flex-end">
+              <a class="btn btn-outline" href="employer-profile.html">Cancel</a
+              ><button class="btn" id="publishButton" type="submit">Publish gig</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

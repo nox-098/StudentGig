@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Administrator Dashboard — StudentGig</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body data-page="admin" data-role="admin">
+    <div class="admin-shell">
+      <aside class="admin-sidebar">
+        <a class="logo" href="admin-dashboard.html"><span class="logo-mark">S</span>StudentGig</a>
+        <div class="notice warning" style="margin-bottom: 20px">Administrator access only</div>
+        <nav class="admin-nav">
+          <button class="tab-btn active" data-tab="overview">Overview</button>
+          <button class="tab-btn" data-tab="students">Student accounts</button>
+          <button class="tab-btn" data-tab="employers">Employer accounts</button>
+          <button class="tab-btn" data-tab="gigs">Gig postings</button>
+          <button class="tab-btn" data-tab="applications">Applications</button>
+          <button class="tab-btn" data-tab="activity">Website activity</button>
+            <button class="btn btn-danger btn-block" data-logout style="margin-top: 30px">
+            Log out
+          </button>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <header class="admin-top">
+          <div>
+            <span class="eyebrow">Administrator workspace</span>
+            <h1 style="font-size: 38px; margin: 6px 0">System control center</h1>
+          </div>
+          <div class="nav-user">
+            <div class="avatar sm">AD</div>
+            <div><strong>Administrator</strong><small>Full management access</small></div>
+          </div>
+        </header>
+        <select
+          class="admin-mobile-nav"
+          aria-label="Admin section"
+          onchange="document.querySelector('[data-tab=' + this.value + ']').click()"
+        >
+          <option value="overview">Overview</option>
+          <option value="students">Student accounts</option>
+          <option value="employers">Employer accounts</option>
+          <option value="gigs">Gig postings</option>
+          <option value="applications">Applications</option>
+          <option value="activity">Website activity</option>
+        </select>
+        <section class="tab-panel active" id="overview">
+          <div class="grid-4" id="adminStats"></div>
+          <div class="grid-2">
+            <article class="card panel">
+              <span class="eyebrow">Access model</span>
+              <h2 style="font-size: 26px; margin-top: 10px">Three roles. Clear boundaries.</h2>
+              <p class="muted">
+                Administrator accounts are not exposed in public registration. Students and
+                employers are restricted to their own modules and records.
+              </p>
+            </article>
+            <article class="card panel">
+              <span class="eyebrow">Management</span>
+              <h2 style="font-size: 26px; margin-top: 10px">All controls are live.</h2>
+              <p class="muted">
+                Use the sections to suspend accounts, close or remove gigs, review applications, and
+                inspect recent platform activity.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="tab-panel" id="students">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">Account management</span>
+              <h2 style="font-size: 30px; margin-top: 8px">Student accounts</h2>
+            </div>
+            <div class="search-field" style="max-width: 300px">
+              <input id="adminSearch" placeholder="Search active table" />
+            </div>
+          </div>
+          <div class="card table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Registered</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="studentRows"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="tab-panel" id="employers">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">Account management</span>
+              <h2 style="font-size: 30px; margin-top: 8px">Employer accounts</h2>
+            </div>
+          </div>
+          <div class="card table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Employer</th>
+                  <th>Registered</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="employerRows"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="tab-panel" id="gigs">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">Content management</span>
+              <h2 style="font-size: 30px; margin-top: 8px">All gig postings</h2>
+            </div>
+          </div>
+          <div class="card table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Gig</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="gigRows"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="tab-panel" id="applications">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">Platform activity</span>
+              <h2 style="font-size: 30px; margin-top: 8px">All applications</h2>
+            </div>
+          </div>
+          <div class="card table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Gig</th>
+                  <th>Employer</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="applicationRows"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="tab-panel" id="activity">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">Audit trail</span>
+              <h2 style="font-size: 30px; margin-top: 8px">Website activity</h2>
+            </div>
+          </div>
+          <div class="card activity-list" id="activityList"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

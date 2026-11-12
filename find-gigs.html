@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Find Gigs — StudentGig</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body data-page="find-gigs" data-role="student">
+    <div id="siteNav"></div>
+    <main>
+      <section class="page-head">
+        <div class="container">
+          <span class="eyebrow">Student opportunity board</span>
+          <h1>Find work that fits.</h1>
+          <p>Search active opportunities by skill, category, location, work type, and pay.</p>
+        </div>
+      </section>
+      <section class="section-sm">
+        <div class="container">
+          <div class="browse-layout">
+            <form class="card filters" id="filterForm">
+              <div style="display: flex; justify-content: space-between; align-items: center">
+                <h3>Filters</h3>
+                <button class="btn btn-ghost btn-sm" type="reset">Clear</button>
+              </div>
+              <div class="form-group">
+                <label for="q">Search</label
+                ><input id="q" name="q" placeholder="Title, company, keyword" />
+              </div>
+              <div class="form-group">
+                <label for="category">Category</label
+                ><select id="category" name="category">
+                  <option value="">All categories</option>
+                  <option>Marketing</option>
+                  <option>Design</option>
+                  <option>Retail</option>
+                  <option>Events</option>
+                  <option>Education</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="location">Location</label
+                ><select id="location" name="location">
+                  <option value="">All locations</option>
+                  <option>Remote</option>
+                  <option>On Campus</option>
+                  <option>Local</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="type">Job type</label
+                ><select id="type" name="type">
+                  <option value="">All types</option>
+                  <option>Part-Time</option>
+                  <option>Short-Term</option>
+                  <option>Remote</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Pay range</label>
+                <div class="salary-row">
+                  <input name="min" type="number" min="0" placeholder="Min" /><input
+                    name="max"
+                    type="number"
+                    min="0"
+                    placeholder="Max"
+                  />
+                </div>
+              </div>
+            </form>
+            <div>
+              <div class="results-head">
+                <strong id="resultCount">0 opportunities</strong
+                ><span class="muted" style="font-size: 12px">Active gigs only</span>
+              </div>
+              <div class="job-list" id="jobList"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Student Dashboard — StudentGig</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body data-page="student-profile" data-role="student">
+    <div id="siteNav"></div>
+    <main class="section-sm">
+      <div class="container">
+        <section class="dashboard-hero">
+          <div class="profile-person">
+            <div id="studentPhoto"></div>
+            <div>
+              <span class="kicker">Student workspace</span>
+              <h1 id="studentName">Student</h1>
+              <p class="muted" id="studentSubtitle"></p>
+            </div>
+          </div>
+          <div class="action-row">
+            <label class="btn btn-outline file-label"
+              >Change photo<input id="photoInput" type="file" accept="image/*" /></label
+            ><button class="btn" id="editProfile">Edit profile</button>
+          </div>
+        </section>
+        <section class="section-sm"><div class="dashboard-grid" id="studentStats"></div></section>
+        <div class="dashboard-grid">
+          <section class="card span-8" id="profileDetails"></section>
+          <aside class="card span-4">
+            <h3>Availability & location</h3>
+            <div id="availability"></div>
+            <a class="btn btn-outline btn-block" href="find-gigs.html">Browse active gigs</a>
+          </aside>
+          <section class="card span-12" id="applications">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">My activity</span>
+                <h2 style="font-size: 28px; margin: 8px 0">Submitted applications</h2>
+              </div>
+              <a class="btn btn-sm" href="find-gigs.html">Find more gigs</a>
+            </div>
+            <div id="studentApplications"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <div class="modal" id="profileModal">
+      <div class="modal-card">
+        <div class="modal-head">
+          <h3>Edit student profile</h3>
+          <button type="button" data-close-modal aria-label="Close">×</button>
+        </div>
+        <form id="studentProfileForm">
+          <div class="form-group">
+            <label for="name">Full name</label><input id="name" name="name" required />
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="degree">Course or degree</label
+              ><input id="degree" name="degree" placeholder="BS Information Technology" />
+            </div>
+            <div class="form-group">
+              <label for="school">University</label
+              ><input id="school" name="school" placeholder="University name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bio">Biography</label
+            ><textarea
+              id="bio"
+              name="bio"
+              placeholder="Introduce your interests and strengths"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="skills">Skills</label
+            ><input id="skills" name="skills" placeholder="Figma, tutoring, customer service" />
+            <div class="helper">Separate skills with commas.</div>
+          </div>
+          <div class="form-group">
+            <label for="preferences">Work preferences</label
+            ><input
+              id="preferences"
+              name="preferences"
+              placeholder="Remote design work, weekend events"
+            />
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="profileAvailability">Availability</label
+              ><input
+                id="profileAvailability"
+                name="availability"
+                placeholder="Weekdays after 2 PM"
+              />
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label
+              ><input id="location" name="location" placeholder="City or campus" />
+            </div>
+          </div>
+          <button class="btn btn-block" type="submit">Save profile</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

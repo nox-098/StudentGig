@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Messages — StudentGig</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body data-page="messages" data-role="member">
+    <div id="siteNav"></div>
+    <main class="chat-shell">
+      <aside class="chat-sidebar">
+        <h2 style="font-size: 28px">Messages</h2>
+        <p class="muted" style="font-size: 12px">
+          Only connected students and employers appear here.
+        </p>
+        <div id="conversationList"></div>
+      </aside>
+      <section class="chat-main">
+        <header class="chat-header">
+          <div>
+            <span class="kicker">Conversation</span
+            ><strong id="chatPerson" style="display: block">Messages</strong>
+          </div>
+        </header>
+        <div class="messages" id="messageHistory"></div>
+        <form class="chat-compose" id="messageForm">
+          <input
+            name="text"
+            autocomplete="off"
+            required
+            placeholder="Write a professional message…"
+            aria-label="Message"
+          /><button class="btn" type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

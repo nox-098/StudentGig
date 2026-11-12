@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Employer Dashboard — StudentGig</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body data-page="employer-profile" data-role="employer">
+    <div id="siteNav"></div>
+    <main class="section-sm">
+      <div class="container">
+        <section class="dashboard-hero">
+          <div class="profile-person">
+            <div id="companyLogo"></div>
+            <div>
+              <span class="kicker">Employer workspace</span>
+              <h1 id="companyName">Company</h1>
+              <p class="muted" id="companySubtitle"></p>
+            </div>
+          </div>
+          <div class="action-row">
+            <label class="btn btn-outline file-label"
+              >Change logo<input id="logoInput" type="file" accept="image/*" /></label
+            ><button class="btn btn-outline" id="editProfile">Edit company</button
+            ><a class="btn" href="post-job.html">Post a gig</a>
+          </div>
+        </section>
+        <section class="section-sm"><div class="dashboard-grid" id="employerStats"></div></section>
+        <div class="dashboard-grid">
+          <section class="card span-8" id="companyDetails"></section>
+          <aside class="card span-4">
+            <span class="eyebrow">Ownership protected</span>
+            <h3 style="margin-top: 12px">Your data stays scoped.</h3>
+            <p class="muted">
+              You can edit only gigs created by this account and review only students who applied to
+              those gigs.
+            </p>
+          </aside>
+          <section class="card span-12">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Your listings</span>
+                <h2 style="font-size: 28px; margin: 8px 0">Manage posted gigs</h2>
+              </div>
+              <a class="btn btn-sm" href="post-job.html">Post new gig</a>
+            </div>
+            <div id="employerGigs"></div>
+          </section>
+          <section class="card span-12" id="applicants">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Your candidates</span>
+                <h2 style="font-size: 28px; margin: 8px 0">Review applications</h2>
+              </div>
+              <a class="btn btn-outline btn-sm" href="messages.html">Open messages</a>
+            </div>
+            <div id="employerApplicants"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <div class="modal" id="profileModal">
+      <div class="modal-card">
+        <div class="modal-head">
+          <h3>Edit employer profile</h3>
+          <button type="button" data-close-modal aria-label="Close">×</button>
+        </div>
+        <form id="employerProfileForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact person</label><input id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company name</label
+              ><input id="company" name="company" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Company description</label
+            ><textarea id="description" name="description" required></textarea>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="contact">Contact details</label
+              ><input id="contact" name="contact" required />
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label><input id="location" name="location" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="industry">Industry</label
+            ><input id="industry" name="industry" placeholder="Creative marketing" />
+          </div>
+          <button class="btn btn-block" type="submit">Save company profile</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
